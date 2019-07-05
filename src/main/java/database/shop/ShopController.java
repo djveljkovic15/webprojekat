@@ -15,7 +15,7 @@ public class ShopController {
     }
 
     @POST
-    @Path("/save")
+    @Path("/add")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Shop save(Shop shop){
@@ -27,7 +27,7 @@ public class ShopController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Shop update(Shop shop){
-        return shopService.save(shop);
+        return shopService.update(shop);
     }
 
 //    @DELETE
@@ -50,11 +50,10 @@ public class ShopController {
         return shopService.findById(id);
     }
     @GET
-//    @Path("/find")
+    @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Shop> findAll(){
         return shopService.findAll();
     }
-
 
 }

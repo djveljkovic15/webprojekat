@@ -8,24 +8,24 @@ import java.util.List;
 @SuppressWarnings("Duplicates")
 public class CouponService {
 
-    public Coupon save(Coupon coupon, Shop shop){
-        try {
-            if(shop==null|| ShopRepository.findById(shop.getId())==null){
-                coupon.setShop(ShopRepository.save(shop));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public Coupon save(Coupon coupon){//, Shop shop){
+//        try {
+//            if(shop==null|| ShopRepository.findById(shop.getId())==null){
+//                coupon.setShop(ShopRepository.save(shop));
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         return CouponRepository.save(coupon);
     }
-    public Coupon update(Coupon coupon, Shop shop){
-        try {
-            if(shop==null|| ShopRepository.findById(shop.getId())==null){
-                coupon.setShop(ShopRepository.save(shop));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public Coupon update(Coupon coupon){//, Shop shop){
+//        try {
+//            if(shop==null|| ShopRepository.findById(shop.getId())==null){
+//                coupon.setShop(ShopRepository.save(shop));
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         return CouponRepository.update(coupon);
     }
     public void deleteById(Long id) throws Exception {

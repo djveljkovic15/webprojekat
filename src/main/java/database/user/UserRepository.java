@@ -39,7 +39,7 @@ public class UserRepository {
         if (user != null)
             return user;
         else
-            throw new Exception("Couldn't find coupon with given ID.");
+            throw new Exception("Couldn't find user with given ID.");
     }
     public static List<User> findAll(){
         Session session = HibernateUtil.getSessionFactory().openSession();

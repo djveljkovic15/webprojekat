@@ -39,7 +39,7 @@ public class ShopRepository {
         if (shop != null)
             return shop;
         else
-            throw new Exception("Couldn't find coupon with given ID.");
+            throw new Exception("Couldn't find shop with given ID.");
     }
     public static List<Shop> findAll(){
         Session session = HibernateUtil.getSessionFactory().openSession();

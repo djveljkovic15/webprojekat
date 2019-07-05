@@ -2,7 +2,6 @@ package database.coupon;
 
 
 import database.HibernateUtil;
-import database.Main;
 import org.hibernate.Session;
 
 import java.util.List;

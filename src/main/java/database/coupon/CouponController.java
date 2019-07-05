@@ -15,14 +15,14 @@ public class CouponController {
     }
 
     @POST
-    @Path("/save")
+    @Path("/add")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Coupon save(Coupon coupon){
 //        return couponService.save(coupon);
         if(coupon.getShop()==null)
             throw new NullPointerException();
-        return couponService.save(coupon,coupon.getShop());
+        return couponService.save(coupon);//,coupon.getShop());
     }
 
     @POST
@@ -32,7 +32,7 @@ public class CouponController {
     public Coupon update(Coupon coupon){
         if(coupon.getShop()==null)
             throw new NullPointerException();
-        return couponService.save(coupon,coupon.getShop());
+        return couponService.update(coupon);//,coupon.getShop());
     }
 
 //    @DELETE
@@ -41,6 +41,7 @@ public class CouponController {
 //    public void deleteById(@PathParam("id") Long id) throws Exception {
 //        couponService.deleteById(id);
 //    }
+
     @DELETE
     @Path("/delete/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -55,15 +56,10 @@ public class CouponController {
         return couponService.findById(id);
     }
     @GET
-//    @Path("/find")
+    @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Coupon> findAll(){
         return couponService.findAll();
     }
-
-
-
-
-
 
 }
