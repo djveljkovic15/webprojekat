@@ -58,10 +58,11 @@ public class UserController {
     }
 
     @POST
-    @Path("/login/{username}-{password}")
+//    @Path("/login/{username}-{password}")
+    @Path("/login")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public User login(@PathParam("username")String username, @PathParam("password")String password) {
-        return userService.login(username, password);
+    public User login(Login login){//String username, String password) {
+        return userService.login(login.getUsername(), login.getPassword());
     }
 }

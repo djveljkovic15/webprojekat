@@ -27,6 +27,5 @@ public class UserService {
                         user.getUsername().equals(username)&&user.getPassword().equals(password))
                 .findFirst().orElse(null);
     }
-
 }
 

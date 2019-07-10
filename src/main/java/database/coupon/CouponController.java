@@ -62,4 +62,18 @@ public class CouponController {
         return couponService.findAll();
     }
 
+    @GET
+    @Path("/active")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Coupon> findAllActive(){
+        return couponService.findAllActive();
+    }
+
+    @GET
+    @Path("/find/shop/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Coupon> findByShopId(@PathParam("id") Long id){
+        return couponService.findByShopId(id);
+    }
+
 }

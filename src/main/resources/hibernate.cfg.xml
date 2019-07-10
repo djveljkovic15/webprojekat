@@ -21,7 +21,7 @@
         <property name="connection.password"></property>
 
         <!-- JDBC connection pool, use Hibernate internal connection pool -->
-        <property name="connection.pool_size">5</property>
+        <property name="connection.pool_size">25</property>
 
         <!-- Defines the SQL dialect used in Hibernate's application -->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
