@@ -8,5 +8,5 @@ import lombok.NoArgsConstructor;
 public class PageInfo {
     private int numberOfPages;
     private int pageNumber;
-    private int dataPerPage;
+    private int itemsPerPage;
 }

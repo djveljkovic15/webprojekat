@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class PaginationResponse<T> {
-    private T data;
+    private T response;
     private PageInfo pageInfo;
 }

@@ -76,4 +76,12 @@ public class CouponController {
         return couponService.findByShopId(id);
     }
 
+    @GET
+    @Path("/all/paginated/{firstResult}-{maxResult}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Coupon> findAllPaginated(@PathParam("firstResult")int firstResult, @PathParam("maxResult")int maxResult){
+        return couponService.findAllPaginated(firstResult, maxResult);
+    }
+
+
 }

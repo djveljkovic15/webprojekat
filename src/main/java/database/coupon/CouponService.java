@@ -1,11 +1,13 @@
 package database.coupon;
 
+import database.pagination.PageInfo;
 import database.pagination.PaginationResponse;
 import database.shop.Shop;
 import database.shop.ShopRepository;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -65,13 +67,9 @@ public class CouponService {
         }
         throw new RuntimeException();
     }
-
-//    public PaginationResponse<List<Coupon>> findAll(Integer pageNumber){
-//        return
-//    }
-//    public PaginationResponse<Coupon> couponPaginationResponse() {
-//
-//    }
+    public List<Coupon> findAllPaginated(int firstResult, int maxResult){
+        return CouponRepository.findAllPaginated(firstResult,maxResult);
+    }
 
 
 }

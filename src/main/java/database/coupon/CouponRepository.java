@@ -3,6 +3,7 @@ package database.coupon;
 
 import database.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -44,6 +45,25 @@ public class CouponRepository {
     public static List<Coupon> findAll(){
         Session session = HibernateUtil.getSessionFactory().openSession();
         return session.createQuery("SELECT a FROM Coupon a", Coupon.class).getResultList();
-
     }
+
+//    public static List<Coupon> findAllPaginated(){
+//        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+//        session.beginTransaction();
+//        Query query = this.getSession().createQuery("FROM Coupon");
+//        query.setFirstResult(0);
+//        query.setMaxResults(20);
+//        List entities = query.list();
+//        session.getTransaction().commit();
+//        return session.create
+//    }
+    public static List<Coupon> findAllPaginated(int firstResult, int maxResult){
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Query query = session.createQuery("from Coupon ");
+        query.setFirstResult(firstResult);
+        query.setMaxResults(maxResult);
+        List<Coupon> couponList = query.list();
+        return couponList;
+    }
+
 }
